@@ -1,24 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import CartWidget from "./CartWidget";
 import { Flex } from "@chakra-ui/react";
 
 export default function NavBar() {
+
+
+ const itemsInCart = 2
+
+
   return (
     <Flex justifyContent="space-around" alignItems="center" h="10vh">
       <Image
-        boxSize="100px"
+        boxSize="120px"
         objectFit="fill"
-        src="https://tse2.mm.bing.net/th?id=OIP.0sgMb_WiSlSgdyxXpMzBQgAAAA&pid=Api&P=0&h=180"
+        src="https://res.cloudinary.com/leoms96/image/upload/v1692574978/LS-MOTOSTORE/LOGO_mqecvc.png"
         alt="logo"
       />
       <Flex gap="40">
         <Link _hover={{ color: "red" }}>Home</Link>
-        <Link _hover={{ color: "red" }}>Accesories</Link>
-        <Link _hover={{ color: "red" }}>Clothing</Link>
+        <Link _hover={{ color: "red" }}>Parts & Accesories</Link>
+        <Link _hover={{ color: "red" }}>Clothing & Gear</Link>
       </Flex>
-      <CartWidget />
+      <CartWidget
+        itemsInCart={itemsInCart} />
     </Flex>
   );
 }
