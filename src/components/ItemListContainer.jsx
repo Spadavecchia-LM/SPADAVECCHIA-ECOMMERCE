@@ -3,9 +3,7 @@ import { Center } from "@chakra-ui/react";
 import { Highlight } from "@chakra-ui/react";
 
 
-export default function ItemListContainer() {
-
-const greeting = "Welcome to LS Motorstore."
+export default function ItemListContainer({greetings}) {
 
   return (
     <Center h="90vh" fontSize="4xl">
@@ -19,7 +17,7 @@ const greeting = "Welcome to LS Motorstore."
           color: "white",
         }}
       >
-        {greeting}
+        {greetings}
       </Highlight>
     </Center>
   );

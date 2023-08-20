@@ -5,11 +5,6 @@ import CartWidget from "./CartWidget";
 import { Flex } from "@chakra-ui/react";
 
 export default function NavBar() {
-
-
- const itemsInCart = 2
-
-
   return (
     <Flex justifyContent="space-around" alignItems="center" h="10vh">
       <Image
@@ -23,8 +18,7 @@ export default function NavBar() {
         <Link _hover={{ color: "red" }}>Parts & Accesories</Link>
         <Link _hover={{ color: "red" }}>Clothing & Gear</Link>
       </Flex>
-      <CartWidget
-        itemsInCart={itemsInCart} />
+      <CartWidget/>
     </Flex>
   );
 }
