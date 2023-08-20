@@ -1,9 +1,12 @@
 import React from "react";
 import { Center } from "@chakra-ui/react";
 import { Highlight } from "@chakra-ui/react";
-import { color } from "framer-motion";
+
 
 export default function ItemListContainer() {
+
+const greeting = "Welcome to LS Motorstore."
+
   return (
     <Center h="90vh" fontSize="4xl">
       <Highlight
@@ -16,7 +19,7 @@ export default function ItemListContainer() {
           color: "white",
         }}
       >
-        Welcome to LS Motorstore.
+        {greeting}
       </Highlight>
     </Center>
   );
