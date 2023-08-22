@@ -1,7 +1,7 @@
-import NavBar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
+import NavBar from "./components/navBar/NavBar";
+import ItemListContainer from "./components/itemListContainer/ItemListContainer";
 
-export default function App() {
+const App = () => {
   const greetings = "Welcome to LS Motorstore."
   return (
     <>
@@ -10,3 +10,4 @@ export default function App() {
     </>
   );
 }
+export default App

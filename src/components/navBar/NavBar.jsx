@@ -4,7 +4,7 @@ import { Image } from "@chakra-ui/react";
 import CartWidget from "./CartWidget";
 import { Flex } from "@chakra-ui/react";
 
-export default function NavBar() {
+const NavBar = () => {
   return (
     <Flex justifyContent="space-around" alignItems="center" h="10vh">
       <Image
@@ -22,3 +22,4 @@ export default function NavBar() {
     </Flex>
   );
 }
+export default NavBar
