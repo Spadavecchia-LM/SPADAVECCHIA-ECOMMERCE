@@ -13,14 +13,14 @@ const onAdd = () => {
 
     return (
         <>
-        <Flex flexDirection="column">
-            <Flex justifyContent="space-between" alignItems="center">
-                <Button onClick={()=> count > 0 ? setCount(count -1): alert("no puede ser menor a 0")}>-</Button>
+        <Flex  alignItems="center" gap={5} padding={5}>
+            <Flex justifyContent="center" alignItems="center" gap={5}>
+                <Button onClick={()=> count > 0 ? setCount(count -1): alert("no puede ser menor a 0")} size="sm" colorScheme="blue">-</Button>
                 <Text>{count}</Text>
-                <Button onClick={()=> count < stock ? setCount(count+1) : alert("no hay mas stock")}>+</Button>
+                <Button onClick={()=> count < stock ? setCount(count+1) : alert("no hay mas stock")} size="sm" colorScheme="blue">+</Button>
             </Flex>
             <div>
-                <Button onClick={()=> onAdd()}>Añadir al carrito</Button>
+                <Button onClick={()=> onAdd()} colorScheme="green" size="sm">Add to cart</Button>
             </div>
         </Flex>
 
