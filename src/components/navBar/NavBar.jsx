@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 const NavBar = () => {
   return (
     <Flex justifyContent="space-around" alignItems="center" h="10vh">
-      <NavLink to={`/home`}>
+      <NavLink to={`/`}>
       <Image
         boxSize="120px"
         objectFit="fill"
@@ -16,7 +16,7 @@ const NavBar = () => {
       />
       </NavLink>
       <Flex gap="40">
-        <NavLink to={`/home`}>Home</NavLink>
+        <NavLink to={`/`}>Home</NavLink>
         <NavLink to={`/category/1`}>Parts & Accesories</NavLink>
         <NavLink to={`/category/2`}>Clothing & Gear</NavLink>
       </Flex>
