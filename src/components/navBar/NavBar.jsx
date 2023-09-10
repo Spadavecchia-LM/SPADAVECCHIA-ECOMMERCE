@@ -1,5 +1,5 @@
 
-import { Image } from "@chakra-ui/react";
+import { Image, Link } from "@chakra-ui/react";
 import CartWidget from "./CartWidget";
 import { Flex } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
@@ -15,10 +15,10 @@ const NavBar = () => {
         alt="logo"
       />
       </NavLink>
-      <Flex gap="40">
-        <NavLink to={`/`}>Home</NavLink>
-        <NavLink to={`/category/1`}>Parts & Accesories</NavLink>
-        <NavLink to={`/category/2`}>Clothing & Gear</NavLink>
+      <Flex gap="30">
+        <Link _hover={{color:"red"}}><NavLink to={`/`}>Home</NavLink></Link>
+        <Link _hover={{color:"red"}}><NavLink to={`/category/1`}>Parts & Accesories</NavLink></Link>
+        <Link _hover={{color:"red"}}><NavLink to={`/category/2`}>Clothing & Gear</NavLink></Link>
       </Flex>
       <CartWidget/>
     </Flex>
