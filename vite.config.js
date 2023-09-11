@@ -9,5 +9,5 @@ export default defineConfig({
       usePolling: true,
     },
   },
-  base:"https://Spadavecchia-LM.github.io/"
+  base:"https://Spadavecchia-LM.github.io/SPADAVECCHIA-ECOMMERCE"
 })
