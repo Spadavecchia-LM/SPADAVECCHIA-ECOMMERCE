@@ -1,30 +1,31 @@
-import React, { useState, useEffect } from 'react'
-import getProductos from '../../js/mockApi'
 import ItemDetail from './ItemDetail'
-import { useParams } from 'react-router-dom'
 import { Flex } from '@chakra-ui/react'
+import {useEffect, useState} from 'react'
+import { useParams } from 'react-router-dom'
+import {collection, getDocs,getFirestore} from "firebase/firestore"
+
 
 const ItemDetailContainer = () => {
   const [productos, setProductos] = useState([])
   const {productId} = useParams()
-  const productosFiltrados = productos.filter(p => p.id == productId)
-
+ 
   useEffect(() => {
-    const fetchProductos = async () => {
-      try {
-        const responseProductos = await getProductos;
-        setProductos(responseProductos)
-      } catch (error) {
-        console.log("error", error)
-      }
-    }
-    fetchProductos()
+    const db = getFirestore()
+    const itemsCollection = collection(db, "products")
+    getDocs(itemsCollection).then((snapshot) => {
+      const docs = snapshot.docs.map((doc) => doc.data())
+      setProductos(docs)
+    })
   }, [])
+
+  console.log(productos)
+
+  const productoFiltrado = productos.filter(p => p.id == productId)
 
   return (
     <Flex justifyContent="center" alignItems="center">
       {
-        productosFiltrados.map(p => {
+        productoFiltrado.map(p => {
           return (
             <div key={p.id}>
             <ItemDetail productos={p} />

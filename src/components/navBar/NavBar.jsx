@@ -16,9 +16,9 @@ const NavBar = () => {
       />
       </NavLink>
       <Flex gap="30">
-        <Link _hover={{color:"red"}}><NavLink to={`/`}>Home</NavLink></Link>
-        <Link _hover={{color:"red"}}><NavLink to={`/category/1`}>Parts & Accesories</NavLink></Link>
-        <Link _hover={{color:"red"}}><NavLink to={`/category/2`}>Clothing & Gear</NavLink></Link>
+        <NavLink to={`/`}>Home</NavLink>
+        <NavLink to={`/category/1`}>Parts & Accesories</NavLink>
+        <NavLink to={`/category/2`}>Clothing & Gear</NavLink>
       </Flex>
       <CartWidget/>
     </Flex>

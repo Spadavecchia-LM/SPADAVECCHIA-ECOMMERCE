@@ -1,11 +1,14 @@
 import { Stack, Card, CardBody, Image,CardFooter, Heading, Text, Flex} from '@chakra-ui/react'
-import React from 'react'
 import ItemCount from "../itemListContainer/ItemCount"
+import { useParams } from 'react-router-dom'
 const ItemDetail = ({productos}) => {
+
+
+  
 
   return (
     <>
-           <Card maxW='sm' key={productos.id} >
+           <Card maxW='sm'>
             <CardBody>
                 <Image
                     src={productos.imageUrl}
@@ -22,7 +25,7 @@ const ItemDetail = ({productos}) => {
                 </Stack>
             </CardBody>
             <CardFooter>
-              <ItemCount initial={productos.initial} stock={productos.stock}/>
+              <ItemCount initial={productos.initial} stock={productos.stock} item={productos}/>
             </CardFooter>
             <Flex justifyContent="flex-end">
                 <Text fontSize="xs" color="blue.400">Stock: {productos.stock}u.</Text>

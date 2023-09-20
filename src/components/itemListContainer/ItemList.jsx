@@ -1,7 +1,10 @@
 import Item from "./Item"
 import { Flex, Heading } from "@chakra-ui/react"
 import { useParams } from "react-router-dom"
+
+
 const ItemList = ({ productos }) => {
+    
 const {categoryId} = useParams()
 
 const productosFiltrados = productos.filter(p => p.category == categoryId)
