@@ -2,6 +2,7 @@ import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { collection, getDocs, getFirestore } from 'firebase/firestore'
+import Loader from "../Loader";
 
 
 
@@ -23,7 +24,7 @@ console.log(productos)
 
   return (
     <>
-      <ItemList productos={productos} />
+    {productos.length < 1 ? <Loader/> : <ItemList  productos={productos}/>}
     </>
   );
 }

@@ -1,8 +1,9 @@
 import ItemDetail from './ItemDetail'
-import { Flex } from '@chakra-ui/react'
+import { Flex} from '@chakra-ui/react'
 import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import {collection, getDocs,getFirestore} from "firebase/firestore"
+import Skeleton from '../SkeletonLoader'
 
 
 const ItemDetailContainer = () => {
@@ -23,8 +24,10 @@ const ItemDetailContainer = () => {
   const productoFiltrado = productos.filter(p => p.id == productId)
 
   return (
+    
     <Flex justifyContent="center" alignItems="center">
       {
+        productoFiltrado.length > 0 ?
         productoFiltrado.map(p => {
           return (
             <div key={p.id}>
@@ -32,10 +35,11 @@ const ItemDetailContainer = () => {
             </div>
           )
         })
+        : <Skeleton/>
       }
 
     </Flex>
-  )
+    )
 
 }
 
