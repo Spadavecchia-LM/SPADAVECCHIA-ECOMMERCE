@@ -30,9 +30,9 @@ const ItemDetailContainer = () => {
         productoFiltrado.length > 0 ?
         productoFiltrado.map(p => {
           return (
-            <div key={p.id}>
+            <Flex key={p.id} width="100vw" height="90vh" alignItems="center" justifyContent="center">
             <ItemDetail productos={p} />
-            </div>
+            </Flex>
           )
         })
         : <SkeletonLoader/>

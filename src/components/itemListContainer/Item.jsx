@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 const Item = ({producto}) => {
     return (
-        <Card maxW='sm' >
+        <Card maxW='sm' boxShadow="base" >
             <CardBody>
                 <Image
                     src={producto.imageUrl}

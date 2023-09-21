@@ -12,7 +12,6 @@ const App = () => {
     <BrowserRouter>
     <ShoppingCartProvider>
       <NavBar />
-
       <Routes>
         <Route exact path="/cart" element={<Cart/>}/>
         <Route exact path="/" element={<Home/>}/>
