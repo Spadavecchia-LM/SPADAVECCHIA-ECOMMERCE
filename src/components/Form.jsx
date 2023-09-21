@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { CartContext } from '../context/ShoppingCartProvider'
-import { Text } from '@chakra-ui/react'
+import { Button, Text } from '@chakra-ui/react'
 import { collection, addDoc, getFirestore } from 'firebase/firestore'
 import Loader from './Loader'
+import { NavLink } from 'react-router-dom'
 
 const Form = () => {
 const [nombre,setNombre] = useState("")
@@ -23,12 +24,7 @@ const handleSubmit = (e) => {
 
     addDoc(orderCollection,order).then(({ id }) => setOrderId(id))
 
-    clearCart()
 
-    
-    setTimeout(()=> {
-window.location.replace("/")
-    },2000)
 }
 const order = {
     buyer:{
@@ -59,6 +55,9 @@ const orderCollection = collection(db, "orden")
        orderId === null ? "" : <h3>el id de tu compra es: #{orderId}</h3>
     }
    </div>
+
+    {orderId === null ? "" : <NavLink to={`/`}><Button onClick={()=> clearCart()}>Go Back to home</Button></NavLink> }
+   
    
    </>
   )
