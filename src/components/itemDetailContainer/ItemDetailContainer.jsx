@@ -3,7 +3,7 @@ import { Flex} from '@chakra-ui/react'
 import {useEffect, useState,React} from 'react'
 import { useParams } from 'react-router-dom'
 import {collection, getDocs,getFirestore} from "firebase/firestore"
-import Skeleton from '../SkeletonLoader'
+import SkeletonLoader from '../SkeletonLoader'
 
 
 const ItemDetailContainer = () => {
@@ -35,7 +35,7 @@ const ItemDetailContainer = () => {
             </div>
           )
         })
-        : <Skeleton/>
+        : <SkeletonLoader/>
       }
 
     </Flex>
