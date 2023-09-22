@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
     })
   }, [])
 
-  console.log(productos)
+  
 
   const productoFiltrado = productos.filter(p => p.id == productId)
 

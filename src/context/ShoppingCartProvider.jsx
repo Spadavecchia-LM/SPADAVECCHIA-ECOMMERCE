@@ -1,5 +1,6 @@
 import { createContext, useEffect } from 'react'
 import { useState } from 'react'
+import Swal from "sweetalert2"
 
 export const CartContext = createContext(null)
 
@@ -36,7 +37,25 @@ const ShoppingCartProvider = ({ children }) => {
   };
 
   const clearCart = () => {
-    setCartList([])
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This action will clear your cart permanently!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, i want to clear it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Cleared!',
+          'Your cart has been cleared succesfully.',
+          'success'
+        )
+        setCartList([])
+      }
+    })
+   
 
   }
   const deleteItem = (id) => {
