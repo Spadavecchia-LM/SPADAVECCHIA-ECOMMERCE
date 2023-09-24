@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Icon } from "@chakra-ui/react";
 import { MdShoppingCart } from "react-icons/md";
 import { Badge } from "@chakra-ui/react";

@@ -1,5 +1,6 @@
-import {Card, Image, Stack, CardBody, Text, Heading, CardFooter,Box, Flex} from "@chakra-ui/react"
+import {Card, Image, Stack, CardBody, Text, Heading, CardFooter,Box, Button} from "@chakra-ui/react"
 import ItemCount from "../itemListContainer/ItemCount"
+import { NavLink } from "react-router-dom"
 
 const ItemDetail = ({productos}) => {
 
@@ -34,13 +35,15 @@ const ItemDetail = ({productos}) => {
 
       </CardBody>
   
-      <CardFooter justifyContent="center">
+      <CardFooter justifyContent="space-around" alignItems="center">
       
         <ItemCount stock={productos.stock} initial={productos.initial} item={productos}/>
        
+    <NavLink to={`/category/${productos.category}`}><Button color="white" backgroundColor="black">Continue Shopping</Button></NavLink>
       </CardFooter>
     </Stack>
   </Card>
+ 
     </>
   )
 }

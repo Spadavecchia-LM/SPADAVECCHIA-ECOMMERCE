@@ -11,7 +11,7 @@ const productosFiltrados = productos.filter(p => p.category == categoryId)
 
     return (
         <>
-        <Flex   boxShadow="base" flexDirection="column" alignItems="center" justifyContent="center" color="blue.700" backgroundColor="blue.100" height="500px">
+        <Flex  className="productsHero" boxShadow="base" flexDirection="column" alignItems="center" justifyContent="center" color="white" textShadow="2xl"  height="500px">
         <Heading size="4xl">{categoryId == 1 ? "PARTS & ACCESORIES" : "CLOTHING & GEAR"}</Heading>
         <Text backgroundColor="red.200" padding={1}>25% off in all the store!</Text>
         </Flex>

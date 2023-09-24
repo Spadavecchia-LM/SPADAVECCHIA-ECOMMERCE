@@ -5,7 +5,9 @@ import Home from "./components/Home";
 import ItemDetailContainer from "./components/itemDetailContainer/ItemDetailContainer";
 import Cart from "./components/cart/Cart";
 import ShoppingCartProvider from "./context/ShoppingCartProvider";
-import Form from "./components/Form"
+import Form from "./components/cart/Form"
+import "./index.css"
+import OrderContainer from "./components/orderContainer/OrderContainer";
 
 const App = () => {
   return (
@@ -13,6 +15,7 @@ const App = () => {
     <ShoppingCartProvider>
       <NavBar />
       <Routes>
+        <Route exact path="/myorders" element={<OrderContainer/>}/>
         <Route exact path="/cart" element={<Cart/>}/>
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/category/:categoryId" element={<ItemListContainer/>}/>

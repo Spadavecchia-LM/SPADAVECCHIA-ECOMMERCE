@@ -11,6 +11,10 @@ import {
   Text,
   TableContainer,
   Button,
+  Flex,
+  Image,
+  Heading,
+  
 } from '@chakra-ui/react'
 import { NavLink } from 'react-router-dom'
 import CheckOutButtons from './CheckOutButtons'
@@ -23,10 +27,8 @@ const Cart = () => {
   return (
     <>
       {cartList.length > 0 ?
-        cartList.map(item => {
-          return (
-            <TableContainer key={item.id}>
-              <Table variant="striped" colorScheme='blue' size="sm">
+            <TableContainer padding={10}>
+              <Table  size="sm">
                 <Thead>
                   <Tr>
                     <Th>Product ID</Th>
@@ -38,22 +40,33 @@ const Cart = () => {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  <Tr>
-                    <Td>#{item.id}</Td>
-                    <Td>{item.title}</Td>
-                    <Td isNumeric>{item.quantity}</Td>
-                    <Td isNumeric>${item.price}</Td>
-                    <Td isNumeric>${item.quantity * item.price}</Td>
-                    <Td><Button onClick={() => deleteItem(item.id)} colorScheme='red'>X</Button></Td>
-                  </Tr>
+                    {cartList.map(item => {
+                      return (
+                        <Tr key={item.id}>
+                        <Td>#{item.id}</Td>
+                        <Td>{item.title}</Td>
+                        <Td isNumeric>{item.quantity}</Td>
+                        <Td isNumeric>${item.price}</Td>
+                        <Td isNumeric>${item.quantity * item.price}</Td>
+                        <Td><Button onClick={() => deleteItem(item.id)} colorScheme='red'>X</Button></Td>
+                        </Tr>
+                      )
+                    })}
                 </Tbody>
               </Table>
             </TableContainer>
             
-          )
           
-        })
-        : <h3>The cart is empty. <NavLink to={`/`}><Button size="sm" colorScheme='red'>Back to Home</Button></NavLink> </h3>}
+          
+        
+        : <Flex justifyContent="center" gap={10} alignItems="center" flexDirection="column" height="90vh">
+          <Image  
+          objectFit="contain"
+          boxSize="300px"
+          src='https://res.cloudinary.com/leoms96/image/upload/v1695575448/LS-MOTOSTORE/shopping-cart-with-cross-mark-wireless-paymant-icon-shopping-bag-failure-paymant-sign-online-shopping-vector_662353-912_zrctgd_mxgjlp.png'/>
+          <Heading>Your cart is empty!</Heading>
+          <Text fontSize="18px" color="blackAlpha.700">It seems that there is no items in your cart. <NavLink to={`/`}><Button size="sm" colorScheme='red'>Back to Home</Button></NavLink> </Text>
+          </Flex>}
           {cartList.length > 0 ? <Text textAlign="center" fontSize="4xl" margin={10}>Your current total is: $ {total}</Text> : ""}
          {cartList.length > 0 ? <CheckOutButtons/> : ""}
     </>

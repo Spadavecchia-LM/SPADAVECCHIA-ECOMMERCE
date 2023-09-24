@@ -1,8 +1,10 @@
 
-import { Image, Link } from "@chakra-ui/react";
+import { Image } from "@chakra-ui/react";
 import CartWidget from "./CartWidget";
-import { Flex } from "@chakra-ui/react";
+import { Flex} from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
+import OrderWidget from "./OrderWidget";
+
 
 const NavBar = () => {
   return (
@@ -21,6 +23,7 @@ const NavBar = () => {
         <NavLink to={`/category/2`}>Clothing & Gear</NavLink>
       </Flex>
       <CartWidget/>
+      <OrderWidget/>
     </Flex>
   );
 }

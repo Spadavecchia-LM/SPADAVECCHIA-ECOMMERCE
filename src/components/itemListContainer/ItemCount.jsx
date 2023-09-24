@@ -24,10 +24,10 @@ const ItemCount = ({ stock, initial, item }) => {
     return (
         <>
             <Flex alignItems="center" gap={5} padding={5}>
-                <Flex justifyContent="center" alignItems="center" gap={5}>
-                    <Button onClick={() => count > 0 ? setCount(count - 1) : alert("no puede ser menor a 0")} size="sm" colorScheme="blue">-</Button>
+                <Flex justifyContent="center" alignItems="center" gap={5} border="1px solid black">
+                    <Button onClick={() => count > 0 ? setCount(count - 1) : alert("no puede ser menor a 0")} size="sm" backgroundColor="transparent">-</Button>
                     <Text>{count}</Text>
-                    <Button onClick={() => count < stock ? setCount(count + 1) : alert("no hay mas stock")} size="sm" colorScheme="blue">+</Button>
+                    <Button onClick={() => count < stock ? setCount(count + 1) : alert("no hay mas stock")} size="sm" backgroundColor="transparent">+</Button>
                 </Flex>
                 <div>
                     <Button onClick={() => onAdd()} colorScheme="green" size="sm">Add to cart</Button>

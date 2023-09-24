@@ -3,7 +3,7 @@ import {Center, Highlight} from "@chakra-ui/react"
 const Home = () => {
   return (
     <>
-     <Center h="90vh" fontSize="4xl">
+     <Center h="90vh" fontSize="4xl" className='homeHero' color="white" textShadow="2xl">
         <Highlight
           query="LS Motorstore."
           styles={{
@@ -13,6 +13,7 @@ const Home = () => {
             bg: "red.600",
             color: "white",
           }}
+          
         >
         Welcome to LS Motorstore.
         </Highlight>
