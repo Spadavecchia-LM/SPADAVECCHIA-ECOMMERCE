@@ -16,14 +16,14 @@ const ItemListContainer = () => {
       const docs = snapshot.docs.map((doc) => doc.data())
       setProductos(docs)
     })
-  },[])
+  }, [])
 
 
 
 
   return (
     <>
-    {productos.length < 1 ? <Loader/> : <ItemList  productos={productos}/>}
+      {productos.length < 1 ? <Loader /> : <ItemList productos={productos} />}
     </>
   );
 }

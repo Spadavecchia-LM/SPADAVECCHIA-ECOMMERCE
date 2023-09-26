@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import {collection, getDocs,getFirestore} from "firebase/firestore"
+import { collection, getDocs, getFirestore } from "firebase/firestore"
 import Order from './Order'
-import { Box, Flex , Heading,Spinner} from '@chakra-ui/react'
+import { Box, Flex, Heading, Spinner } from '@chakra-ui/react'
 
 const OrderContainer = () => {
-const [orders,setOrders] = useState([])
+  const [orders, setOrders] = useState([])
 
-useEffect(() => {
+  useEffect(() => {
     const db = getFirestore()
     const itemsCollection = collection(db, "orden")
     getDocs(itemsCollection).then((snapshot) => {
@@ -17,25 +17,25 @@ useEffect(() => {
 
 
   return (
-    
+
     <Flex flexDirection="column" margin={10} height="80vh">
       <Heading>Your orders</Heading>
-        {orders.length > 0 ? 
-    orders.map(o => {
-        return(
+      {orders.length > 0 ?
+        orders.map(o => {
+          return (
             <div key={o.orderId}>
-                <Order o={o}/>
+              <Order o={o} />
             </div>
-        )
-    })
-    :
-    <Flex width="100vw" height="90vh" justifyContent="center" alignItems="center"><Spinner/><Box>Loading orders...</Box></Flex>
-}
+          )
+        })
+        :
+        <Flex width="100vw" height="90vh" justifyContent="center" alignItems="center"><Spinner /><Box>Loading orders...</Box></Flex>
+      }
     </Flex>
-    
- 
-    
-    
+
+
+
+
   )
 }
 

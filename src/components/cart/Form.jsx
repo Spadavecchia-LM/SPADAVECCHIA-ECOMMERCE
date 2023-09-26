@@ -51,27 +51,27 @@ const Form = () => {
                 ...cartList,
             },
             total,
-            orderId:generateOrderId().toString()
+            orderId: generateOrderId().toString()
         }
 
-      
+
         addDoc(orderCollection, order)
         displayAlert(order)
 
         setTimeout(() => {
             window.location.replace("/")
-        },2000)
+        }, 2000)
     }
 
     const displayAlert = (obj) => {
-            Swal.fire(
-                'Order Placed Succesfully!',
-                `your purchase id is: ${obj.orderId} you will be redirected to the home page. `,
-                'success'
-            )
-        }
+        Swal.fire(
+            'Order Placed Succesfully!',
+            `your purchase id is: ${obj.orderId} you will be redirected to the home page. `,
+            'success'
+        )
+    }
 
-    
+
     const generateOrderId = () => {
         return Math.round(Math.random() * 99999999999)
     }

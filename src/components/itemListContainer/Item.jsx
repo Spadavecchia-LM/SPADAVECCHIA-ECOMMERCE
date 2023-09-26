@@ -19,8 +19,8 @@ const Item = ({ producto }) => {
                 </Stack>
             </CardBody>
             <CardFooter justifyContent="space-around" alignItems="center" >
-                    <Text fontSize="md" color="blue.700">${producto.price}</Text>
-                    <NavLink to={`/product/${producto.id}`}><Button color="white" backgroundColor="black">More details</Button></NavLink>
+                <Text fontSize="md" color="blue.700">${producto.price}</Text>
+                <NavLink to={`/product/${producto.id}`}><Button color="white" backgroundColor="black">More details</Button></NavLink>
             </CardFooter>
         </Card>
     )

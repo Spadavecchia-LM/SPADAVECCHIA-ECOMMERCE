@@ -13,21 +13,21 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <BrowserRouter>
-    <ShoppingCartProvider>
-      <NavBar />
-      <Routes>
-        <Route exact path="/myorders" element={<OrderContainer/>}/>
-        <Route exact path="/cart" element={<Cart/>}/>
-        <Route exact path="/" element={<Home/>}/>
-        <Route exact path="/category/:categoryId" element={<ItemListContainer/>}/>
-        <Route exact path="/product/:productId" element={<ItemDetailContainer/>}/>
-        <Route exact path="/checkout" element={<Form/>}/>
-      </Routes>
+      <ShoppingCartProvider>
+        <NavBar />
+        <Routes>
+          <Route exact path="/myorders" element={<OrderContainer />} />
+          <Route exact path="/cart" element={<Cart />} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/category/:categoryId" element={<ItemListContainer />} />
+          <Route exact path="/product/:productId" element={<ItemDetailContainer />} />
+          <Route exact path="/checkout" element={<Form />} />
+        </Routes>
       </ShoppingCartProvider>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
-  
- 
+
+
   );
 }
 export default App

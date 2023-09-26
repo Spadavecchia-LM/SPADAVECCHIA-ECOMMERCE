@@ -79,7 +79,7 @@ const Home = () => {
               <Image
                 src={b}
                 maxW={'100px'} />
-                
+
             )
           })}
         </Grid>

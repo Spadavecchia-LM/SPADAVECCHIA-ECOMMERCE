@@ -49,7 +49,7 @@ const ItemDetail = ({ productos }) => {
 
             {isMounted ? <ItemCount stock={productos.stock} initial={productos.initial} item={productos} /> : <Flex gap={5}><Button onClick={() => setIsMounted(true)} colorScheme="facebook" size="sm">Add more</Button><NavLink to={`/cart`}><Button size="sm" colorScheme="orange">View Cart</Button></NavLink></Flex>}
             <NavLink to={`/category/${productos.category}`}><Button size="sm" color="white" backgroundColor="black">Continue Shopping</Button></NavLink>
-          
+
           </CardFooter>
         </Stack>
       </Card>
