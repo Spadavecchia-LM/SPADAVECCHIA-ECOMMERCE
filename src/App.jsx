@@ -8,6 +8,7 @@ import ShoppingCartProvider from "./context/ShoppingCartProvider";
 import Form from "./components/cart/Form"
 import "./index.css"
 import OrderContainer from "./components/orderContainer/OrderContainer";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -23,7 +24,7 @@ const App = () => {
         <Route exact path="/checkout" element={<Form/>}/>
       </Routes>
       </ShoppingCartProvider>
-      
+      <Footer/>
     </BrowserRouter>
   
  

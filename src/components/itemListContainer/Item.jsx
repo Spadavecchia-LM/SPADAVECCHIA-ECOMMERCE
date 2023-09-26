@@ -7,7 +7,7 @@ const Item = ({ producto }) => {
         <Card maxW='sm' boxShadow="base" minH="md" minW="sm">
             <CardBody>
                 <Image
-                    src={producto.imageUrl}
+                    src={producto.images[0]}
                     alt='Green double couch with wooden legs'
                     borderRadius='lg'
                     height="200px"

@@ -18,10 +18,10 @@ useEffect(() => {
 
   return (
     
-    <Flex flexDirection="column" margin={10}>
+    <Flex flexDirection="column" margin={10} height="80vh">
+      <Heading>Your orders</Heading>
         {orders.length > 0 ? 
     orders.map(o => {
-        <Heading>Your orders</Heading>
         return(
             <div key={o.orderId}>
                 <Order o={o}/>

@@ -33,7 +33,7 @@ const Order = ({o}) => {
     </h2>
     <AccordionPanel pb={4}>
     <TableContainer>
-  <Table variant='striped' colorScheme='teal'>
+  <Table variant='striped' colorScheme='whatsapp'>
     <Thead>
       <Tr>
         <Th>NAME</Th>
@@ -45,7 +45,7 @@ const Order = ({o}) => {
         <Tr>
             <Td>{o.buyer?.nombre}</Td>
             <Td>{o.buyer?.email}</Td>
-            <Td>${o.total}</Td>
+            <Td textAlign={'end'}>${o.total}</Td>
         </Tr>
     </Tbody>
   </Table>

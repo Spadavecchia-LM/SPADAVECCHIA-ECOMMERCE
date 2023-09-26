@@ -4,10 +4,12 @@ import { useState } from "react"
 import { CartContext } from "../../context/ShoppingCartProvider"
 
 
-const ItemCount = ({ stock, initial, item }) => {
+const ItemCount = ({ stock, initial, item}) => {
     const toast = useToast()
     const { addToCart } = useContext(CartContext)
     const [count, setCount] = useState(initial)
+    
+   
 
     const onAdd = () => {
             addToCart(item, count)
@@ -18,8 +20,8 @@ const ItemCount = ({ stock, initial, item }) => {
                 duration: 3000,
                 isClosable: true,
             })
-    }
-
+            
+        }
 
     return (
         <>
@@ -30,7 +32,7 @@ const ItemCount = ({ stock, initial, item }) => {
                     <Button onClick={() => count < stock ? setCount(count + 1) : alert("no hay mas stock")} size="sm" backgroundColor="transparent">+</Button>
                 </Flex>
                 <div>
-                    <Button onClick={() => onAdd()} colorScheme="green" size="sm">Add to cart</Button>
+                    <Button onClick={() => onAdd()}  colorScheme="green" size="sm">Add to cart</Button>
                 </div>
             </Flex>
 

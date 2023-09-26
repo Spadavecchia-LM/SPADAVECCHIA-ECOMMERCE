@@ -1,9 +1,10 @@
 import ItemDetail from './ItemDetail'
 import { Flex} from '@chakra-ui/react'
-import {useEffect, useState,React} from 'react'
+import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import {collection, getDocs,getFirestore} from "firebase/firestore"
 import SkeletonLoader from "../utility/SkeletonLoader"
+import React from 'react'
 
 
 const ItemDetailContainer = () => {
@@ -43,4 +44,4 @@ const ItemDetailContainer = () => {
 
 }
 
-export default ItemDetailContainer
+export default React.memo(ItemDetailContainer)

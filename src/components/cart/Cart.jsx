@@ -65,7 +65,7 @@ const Cart = () => {
           boxSize="300px"
           src='https://res.cloudinary.com/leoms96/image/upload/v1695575448/LS-MOTOSTORE/shopping-cart-with-cross-mark-wireless-paymant-icon-shopping-bag-failure-paymant-sign-online-shopping-vector_662353-912_zrctgd_mxgjlp.png'/>
           <Heading>Your cart is empty!</Heading>
-          <Text fontSize="18px" color="blackAlpha.700">It seems that there is no items in your cart. <NavLink to={`/`}><Button size="sm" colorScheme='red'>Back to Home</Button></NavLink> </Text>
+          <Text fontSize="18px" color="blackAlpha.700">It seems that there are no items in your cart. <NavLink to={`/`}><Button size="sm" colorScheme='red'>Back to Home</Button></NavLink> </Text>
           </Flex>}
           {cartList.length > 0 ? <Text textAlign="center" fontSize="4xl" margin={10}>Your current total is: $ {total}</Text> : ""}
          {cartList.length > 0 ? <CheckOutButtons/> : ""}
