@@ -38,6 +38,6 @@ una vez que el carrito este cargado de productos el usario podra ver una tabla d
 - JSX
 
 ### GIF DE EJEMPLO 
-
+[VIDEO EJEMPLO] (https://drive.google.com/file/d/1oaXaImoP6WG63x4ooW_VLpSJq-IhLldu/view?usp=sharing)
 
 
